@@ -1,0 +1,35 @@
+
+table{
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid gray;
+    padding: 8px;
+    text-align: left;
+}
+th{
+    background-color: rgb(228, 228, 228);
+}
+.form-container{
+    
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+.students{
+    width: 930px;
+}
+
+.editButton,
+.deleteButton{
+    height: 40px;
+    width: 100%;
+}
+.title{
+    display: flex;
+   justify-content: center;
+   margin-top: 40px;
+}
+

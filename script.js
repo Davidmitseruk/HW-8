@@ -14,9 +14,10 @@ function renderTable() {
     row.innerHTML = `
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
-            <td>${user.email}</td>
-            <td>${user.phone}</td>
-            <td>
+            <td>${user.age}</td>
+            <td>${user.course}</td>
+            <td>${user.faculty}</td>
+            
                 <button class="editButton" data-index="${index}">Edit</button>
                 <button class="deleteButton" data-index="${index}">Delete</button>
             </td>
@@ -42,14 +43,15 @@ function renderTable() {
 function addOrUpdateUser() {
   const firstName = document.getElementById("firstName").value.trim();
   const lastName = document.getElementById("lastName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
+  const age = document.getElementById("age").value.trim();
+  const course = document.getElementById("course").value.trim();
+  const faculty = document.getElementById("faculty").value.trim();
 
-  if (!firstName || !lastName || !email || !phone) {
+  if (!firstName || !lastName || !age || !course || !faculty) {
     alert("Please fill in all fields");
     return;
   }
-  const user = { firstName, lastName, email, phone };
+  const user = { firstName, lastName, age, course, faculty};
   if (editingIndex !== null) {
     users[editingIndex] = user;
     editingIndex = null; 
@@ -66,8 +68,9 @@ function editUser(index) {
   const user = users[index];
   document.getElementById("firstName").value = user.firstName;
   document.getElementById("lastName").value = user.lastName;
-  document.getElementById("email").value = user.email;
-  document.getElementById("phone").value = user.phone;
+  document.getElementById("age").value = user.email;
+  document.getElementById("course").value = user.course;
+  document.getElementById("faculty").value = user.faculty;
 
   editingIndex = index; 
 }
@@ -81,8 +84,9 @@ function deleteUser(index) {
 function clearForm() {
   document.getElementById("firstName").value = "";
   document.getElementById("lastName").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("phone").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("course").value = "";
+  document.getElementById("faculty").value = "";
 }
 
 renderTable();
